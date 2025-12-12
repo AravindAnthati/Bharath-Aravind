@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aravind Kumar | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Floating Background Shapes -->
+<div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<!-- Dark/Light Mode Toggle -->
+<div class="theme-toggle">
+    <input type="checkbox" id="toggleTheme">
+    <label for="toggleTheme">🌙</label>
+</div>
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">Aravind</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#languages">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+    </ul>
+</nav>
+
+<!-- Header -->
+<header class="glass">
+    <h1>Aravind Kumar</h1>
+    <p>B.Tech Student | Developer</p>
+</header>
+
+<!-- About Section -->
+<section id="about" class="section glass fade-in">
+    <h2>About Me</h2>
+    <p>
+        I'm Aravind Kumar, a B.Tech student passionate about coding, software development,
+        and building creative projects that make an impact.
+    </p>
+</section>
+
+<!-- Education -->
+<section id="education" class="section glass fade-in">
+    <h2>Education</h2>
+    <ul>
+        <li><strong>B.Tech</strong> – (Branch), (College Name)</li>
+        <li><strong>Intermediate</strong> – (School Name)</li>
+        <li><strong>10th Grade</strong> – (School Name)</li>
+    </ul>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section glass fade-in">
+    <h2>Projects</h2>
+    <div class="project-card slide-up glass">
+        <h3>Project 1</h3>
+        <p>Description of your first project.</p>
+    </div>
+
+    <div class="project-card slide-up glass">
+        <h3>Project 2</h3>
+        <p>Description of your second project.</p>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="languages" class="section glass fade-in">
+    <h2>Programming Languages</h2>
+
+    <div class="skill">
+        <p>C</p>
+        <div class="bar"><div style="width: 90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>C++</p>
+        <div class="bar"><div style="width: 85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Java</p>
+        <div class="bar"><div style="width: 80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="bar"><div style="width: 75%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>HTML/CSS/JS</p>
+        <div class="bar"><div style="width: 85%"></div></div>
+    </div>
+
+</section>
+
+<!-- Achievements -->
+<section id="achievements" class="section glass fade-in">
+    <h2>Achievements</h2>
+    <ul>
+        <li>Achievement 1</li>
+        <li>Achievement 2</li>
+        <li>Achievement 3</li>
+    </ul>
+</section>
+
+<footer class="glass fade-in">
+    © 2025 Aravind Kumar
+</footer>
+
+
+<script>
+// Fade/Slide animations
+const elements = document.querySelectorAll('.fade-in, .slide-up');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+});
+elements.forEach(el => observer.observe(el));
+
+// Dark/Light Mode
+document.getElementById('toggleTheme').addEventListener('change', () => {
+    document.body.classList.toggle('dark');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* --- Global --- */
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: #080f2a;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+body.dark {
+    background: #f4f4f4;
+    color: black;
+}
+
+/* Floating Neon Shapes */
+.floating-shapes .shape {
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 150, 255, 0.4);
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: float 8s infinite ease-in-out;
+}
+
+.shape:nth-child(1) { top: 10%; left: 10%; }
+.shape:nth-child(2) { top: 50%; left: 70%; }
+.shape:nth-child(3) { top: 80%; left: 20%; }
+.shape:nth-child(4) { top: 30%; left: 80%; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00eaff;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 20px;
+}
+
+.typing {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00eaff;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #00eaff;
+    width: 0;
+    animation: typing 3s steps(20) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 320px }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+/* Sections */
+.section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 40px;
+}
+
+/* Project Cards */
+.project-card {
+    margin-bottom: 15px;
+    padding: 20px;
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #00eaff66;
+}
+
+/* Skills */
+.skill {
+    margin-bottom: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    background: #00eaff;
+    border-radius: 10px;
+    animation: grow 2s ease-out;
+}
+
+@keyframes grow {
+    from { width: 0; }
+}
+
+/* Fade animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark Mode */
+.theme-toggle {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle label {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dark .glass {
+    background: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.3);
+}
+
+.dark nav .logo {
+    color: #0099ff;
+}
+
+.dark .typing {
+    color: #0099ff;
+}
